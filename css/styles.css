@@ -12,13 +12,15 @@ body {
 .profile-container {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 5em;
 }
 
+.profile-container .profile-img {
+  border-radius: 100%;
+}
+
 .profile-container h1 {
-  text-align: center;
   margin-bottom: 0;
   font-family: 'Sacramento', cursive;
   font-size: 5rem;
@@ -64,15 +66,13 @@ body {
   width: 50%;
 }
 
-/* Skills Container */
+/* Skills Container Related Stylings */
 
 .skills-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   background-color: #f8f8f8;
-  padding-inline: 20em;
   margin-bottom: 5em;
 }
 
@@ -85,7 +85,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  width: 50%;
+  width: 900px;
 }
 
 .skills-container .innerSkills-container div {
@@ -106,7 +106,7 @@ body {
 }
 
 .skills-container .innerSkills-container img {
-  width: 150px;
+  width: 130px;
   margin: 3em;
   transition: transform 0.3s ease-in;
 }
@@ -121,44 +121,52 @@ body {
   opacity: 1;
 }
 
-/* Project Container */
+/* Project Container Related Stylings */
 
 .projects-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
 }
 
-.projects-container .projectsImages-container {
+.projects-container .projectsInner-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
-  width: 75%;
+  width: 1900px;
 }
 
-.projects-container .projectsImages-container div {
+.projects-container .projectsInner-container .projectsImage-container {
   overflow: hidden;
   margin: 2em;
   border-radius: 11px;
   position: relative;
 }
 
-.projects-container .projectsImages-container div img {
-  width: 800px;
+.projects-container
+  .projectsInner-container
+  .projectsImage-container
+  .project-image {
+  width: 850px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   transition: all 500ms ease;
 }
 
-.projects-container .projectsImages-container div:hover img {
+.projects-container
+  .projectsInner-container
+  .projectsImage-container:hover
+  .project-image {
   transform: scale(1.07);
   filter: blur(2px);
 }
 
-.projects-container .projectsImages-container div .imageOverlay {
+.projects-container
+  .projectsInner-container
+  .projectsImage-container
+  .imageOverlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -175,12 +183,18 @@ body {
   transform: translateY(100%);
 }
 
-.projects-container .projectsImages-container div:hover .imageOverlay {
+.projects-container
+  .projectsInner-container
+  .projectsImage-container:hover
+  .imageOverlay {
   transform: translateY(0);
   opacity: 0.8;
 }
 
-.projects-container .projectsImages-container div .imageContext-container {
+.projects-container
+  .projectsInner-container
+  .projectsImage-container
+  .imageContext-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -188,34 +202,72 @@ body {
   opacity: 0;
   z-index: 9;
   color: white;
-  margin: 1em;
+  margin: 1.1em;
   transition: all 500ms ease;
 }
 
 .projects-container
-  .projectsImages-container
-  div:hover
+  .projectsInner-container
+  .projectsImage-container
+  .imageContext-container
+  p {
+  font-size: 1rem;
+}
+
+.projects-container
+  .projectsInner-container
+  .projectsImage-container:hover
   .imageContext-container {
   transform: translateY(0%);
   opacity: 1;
 }
 
-.projects-container .projectsImages-container div .imageContext-container a {
+.projects-container
+  .projectsInner-container
+  .projectsImage-container
+  .imageContext-container
+  a {
   display: inline-block;
   cursor: pointer;
 }
 
 .projects-container
-  .projectsImages-container
-  div
+  .projectsInner-container
+  .projectsImage-container
   .imageContext-container
   a
   img {
+  position: relative;
   width: 50px;
   filter: blur(0px);
+  bottom: 0;
+  animation: hoveringUp 500s ease infinite linear;
 }
 
-/*  image styles    */
+.projects-container
+  .projectsInner-container
+  .projectsImage-container
+  .imageContext-container
+  a
+  img:hover {
+  opacity: 0.5;
+}
+
+@keyframes hoveringUp {
+  0% {
+    bottom: 0;
+  }
+
+  50% {
+    bottom: -50px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+/*  Cloud image styling     */
 
 img.top-cloud {
   position: absolute;
@@ -227,10 +279,86 @@ img.bottom-cloud {
   position: absolute;
 }
 
-div.profile img {
-  border-radius: 100%;
+/* media queries */
+
+@media only screen and (max-width: 1850px) {
+  .projects-container .projectsInner-container {
+    width: 90%;
+  }
+
+  .projects-container
+    .projectsInner-container
+    .projectsImage-container
+    .project-image {
+    width: 100%;
+  }
 }
 
-span {
-  text-decoration: underline;
+/* ---------------------- */
+
+@media only screen and (max-width: 1000px) {
+  .projects-container .projectsInner-container {
+    width: 100%;
+  }
+
+  .profile-container p {
+    width: 700px;
+  }
+
+  .skills-container .innerSkills-container {
+    width: 95%;
+  }
+}
+
+/* ---------------------- */
+
+@media only screen and (max-width: 750px) {
+  .projects-container .projectsInner-container .projectsImage-container {
+    margin: 1em;
+  }
+
+  .profile-container p {
+    width: 90%;
+    font-size: 1.2rem;
+  }
+
+  .profile-container h1 {
+    font-size: 4rem;
+  }
+
+  .profile-container h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ---------------------- */
+
+@media only screen and (max-width: 600px) {
+  .profile-container h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* ---------------------- */
+
+@media only screen and (max-width: 480px) {
+  .profile-container h1 {
+    font-size: 3.2rem;
+  }
+
+  .profile-container h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ---------------------- */
+
+@media only screen and (max-width: 440px) {
+  .profile-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .profile-container h2 {
+    font-size: 2rem;
+  }
 }
