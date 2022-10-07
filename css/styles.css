@@ -385,6 +385,10 @@ p,
 /* ---------------------- */
 
 @media only screen and (max-width: 900px) {
+  .profile-container h1 {
+    font-size: 4rem;
+  }
+
   .projects-container
     .projectsInner-container
     .projectsImage-container
@@ -426,7 +430,7 @@ p,
   }
 
   .profile-container h1 {
-    font-size: 4rem;
+    font-size: 3.3rem;
   }
 
   .profile-container h2 {
@@ -484,14 +488,22 @@ p,
 /* ---------------------- */
 
 @media only screen and (max-width: 600px) {
+  .profile-container .profile-img {
+    height: 110px;
+    margin-bottom: 1em;
+  }
   .profile-container h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
 /* ---------------------- */
 
 @media only screen and (max-width: 542px) {
+  .profile-container h1 {
+    font-size: 2.5rem;
+  }
+
   .projects-container
     .projectsInner-container
     .projectsImage-container
@@ -534,10 +546,6 @@ p,
     font-size: 1.6rem;
   }
 
-  .profile-container h1 {
-    font-size: 3.2rem;
-  }
-
   .profile-container h2 {
     font-size: 2.2rem;
   }
@@ -552,7 +560,7 @@ p,
 
 @media only screen and (max-width: 440px) {
   .profile-container h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .profile-container h2 {
@@ -564,7 +572,7 @@ p,
 
 @media only screen and (max-width: 390px) {
   .profile-container h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .profile-container h2 {
