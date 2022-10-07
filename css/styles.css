@@ -148,6 +148,10 @@ p,
   align-items: center;
 }
 
+.projects-container h1 {
+  font-size: 2.2rem;
+}
+
 .projects-container .projectsInner-container {
   display: flex;
   flex-flow: row wrap;
@@ -525,6 +529,11 @@ p,
 /* ---------------------- */
 
 @media only screen and (max-width: 480px) {
+  .skills-container h1,
+  .projects-container h1 {
+    font-size: 1.6rem;
+  }
+
   .profile-container h1 {
     font-size: 3.2rem;
   }
@@ -564,5 +573,10 @@ p,
 
   .profile-container p {
     font-size: 0.8rem;
+  }
+
+  .skills-container h1,
+  .projects-container h1 {
+    font-size: 1.3rem;
   }
 }
